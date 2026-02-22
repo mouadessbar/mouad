@@ -15,39 +15,40 @@ body {
     background-color: #111;
     color: #fff;
     text-align: center;
+    padding-bottom: 100px; /* space for fixed button */
 }
 
 .container {
     max-width: 600px;
     margin: auto;
-    padding: 40px 20px;
+    padding: 30px 20px;
 }
 
 h1 {
     color: #f1c40f;
-    font-size: 34px;
+    font-size: 28px;
     font-weight: 700;
 }
 
 p {
-    font-size: 18px;
+    font-size: 16px;
     line-height: 1.6;
     margin: 20px 0;
-    font-weight: 400;
 }
 
 .product-img {
     width: 100%;
-    max-width: 300px;
+    max-width: 280px;
     margin: 20px auto;
 }
 
+/* Normal Button (desktop) */
 .btn {
     display: inline-block;
     padding: 15px 30px;
     background-color: #f1c40f;
     color: #111;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 600;
     text-decoration: none;
     border-radius: 6px;
@@ -62,8 +63,34 @@ p {
 
 .badge {
     margin-top: 20px;
-    font-size: 14px;
+    font-size: 13px;
     color: #ccc;
+}
+
+/* Fixed Button (mobile) */
+.btn-fixed {
+    position: fixed;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 400px;
+    padding: 15px;
+    background-color: #f1c40f;
+    color: #111;
+    font-size: 18px;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 10px;
+    z-index: 1000;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+}
+
+/* Show fixed button only on mobile */
+@media (min-width: 769px) {
+    .btn-fixed {
+        display: none;
+    }
 }
 </style>
 </head>
@@ -78,9 +105,10 @@ p {
 
     <p>
         Discover the powerful formula inspired by the famous Orange Peel compound.
-        Support metabolism, increase energy, and finally break through stubborn fat.
+        Support metabolism, boost energy, and finally break through stubborn fat.
     </p>
 
+    <!-- Desktop Button -->
     <a href="https://citrusburn.com/affiliate-link" 
        target="_blank" 
        class="btn">
@@ -88,11 +116,19 @@ p {
     </a>
 
     <div class="badge">
-        180-Day Money Back Guarantee • Secure Checkout • Limited Time Offer
+        ✔ 180-Day Money Back Guarantee <br>
+        ✔ Secure Checkout <br>
+        ✔ Limited Time Offer
     </div>
 
 </div>
 
-</body>
+<!-- Fixed Mobile Button -->
+<a href="https://citrusburn.com/affiliate-link" 
+   target="_blank" 
+   class="btn-fixed">
+   👉 Get Citrus Burn Now
+</a>
 
+</body>
 </html>
